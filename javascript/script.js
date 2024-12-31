@@ -8,6 +8,16 @@ function updateInfo(response) {
   let cityNameElement = document.querySelector("#city-name");
   let city = response.data.city;
   cityNameElement.innerHTML = city;
+
+  let temperatureIconElement = document.querySelector("#icon");
+
+  if (temperature >= 10) {
+    temperatureIconElement.innerHTML = "☀️";
+  } else if (10 > temperature > 0) {
+    temperatureIconElement.innerHTML = "❄️";
+  } else {
+    temperatureIconElement.innerHTML = "🥶";
+  }
 }
 
 // stage 3 define the search function that uses api response
@@ -29,4 +39,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", displayWeatherInfo);
 
 //city that always run
-searchCity("kicukiro");
+searchCity("kigali");
