@@ -44,12 +44,12 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.city-name {
+.weather-app-city {
   margin: 0;
   font-size: 38px;
   line-height: 48px;
 }
-.city-details {
+.weather-app-city-details {
   font-size: 16px;
   color: rgba(39, 33, 66, 0.4);
   line-height: 24px;
