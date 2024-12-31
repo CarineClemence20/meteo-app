@@ -7,20 +7,28 @@
   </head>
   <body>
     <header>
-      <form>
-        <input type="search" placeholder="Enter a city.." />
-        <input type="submit" value="search" />
+      <form class="search-form">
+        <input
+          type="search"
+          placeholder="Enter a city.."
+          class="search-form-input"
+        />
+        <input type="submit" value="search" class="search-form-button" />
       </form>
     </header>
     <main>
       <div>
-        <h1>kigali</h1>
-        <p>
+        <h1 class="city-name">kigali</h1>
+        <p class="city-info">
           Monday 23:44, mist <br />
-          Humidity: 95%, Wind: 3.6km/h
+          Humidity: <span> 95%</span>, Wind: <span>3.6</span>km/h
         </p>
       </div>
-      <div>☀️12°C</div>
+      <div>
+        <div>☀️</div>
+        <div>12</div>
+        <div>°C</div>
+      </div>
     </main>
 
     <footer>
