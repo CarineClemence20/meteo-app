@@ -13,7 +13,7 @@ function updateInfo(response) {
 
   if (temperature >= 10) {
     temperatureIconElement.innerHTML = "☀️";
-  } else if (10 > temperature > 0) {
+  } else if (temperature < 10 && temperature > 0) {
     temperatureIconElement.innerHTML = "❄️";
   } else {
     temperatureIconElement.innerHTML = "🥶";
