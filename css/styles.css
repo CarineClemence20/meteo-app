@@ -44,7 +44,7 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.weather-app-city {
+.weather-app-city-name {
   margin: 0;
   font-size: 38px;
   line-height: 48px;
@@ -55,7 +55,7 @@ a {
   line-height: 24px;
   font-weight: 500;
 }
-.city-details strong {
+.weather-app-city-details strong {
   color: #f65282;
 }
 .temperature-container {
