@@ -9,15 +9,6 @@ function updateInfo(response) {
   let city = response.data.city;
   cityNameElement.innerHTML = city;
 
-  /*let temperatureIconElement = document.querySelector("#icon");
-
-  if (temperature >= 10) {
-    temperatureIconElement.innerHTML = "☀️";
-  } else if (temperature < 10 && temperature > 0) {
-    temperatureIconElement.innerHTML = "❄️";
-  } else {
-    temperatureIconElement.innerHTML = "🥶";
-  }*/
   let descriptionElement = document.querySelector("#description");
   let description = response.data.condition.description;
   descriptionElement.innerHTML = description;
@@ -30,7 +21,7 @@ function updateInfo(response) {
   let windValue = Math.round(response.data.wind.speed);
   windElement.innerHTML = `${windValue} km/h`;
 
-  let date = new Date(response.data.time * 1000);
+  let date = new Date();
   function formatDate(date) {
     let days = [
       "Sunday",
@@ -56,6 +47,14 @@ function updateInfo(response) {
 
   let dateElement = document.querySelector("#date-element");
   dateElement.innerHTML = `${formatDate(date)}, `;
+
+  console.log(response.data.condition);
+
+  let iconElement = document.querySelector("#icon");
+  console.log(iconElement);
+  iconElement.innerHTML = `<img
+  src="${response.data.condition.icon_url}" 
+  class="temperature-icon"/>`;
 }
 
 // stage 3 define the search function that uses api response
