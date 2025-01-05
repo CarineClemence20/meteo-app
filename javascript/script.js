@@ -9,7 +9,7 @@ function updateInfo(response) {
   let city = response.data.city;
   cityNameElement.innerHTML = city;
 
-  let temperatureIconElement = document.querySelector("#icon");
+  /*let temperatureIconElement = document.querySelector("#icon");
 
   if (temperature >= 10) {
     temperatureIconElement.innerHTML = "☀️";
@@ -17,7 +17,45 @@ function updateInfo(response) {
     temperatureIconElement.innerHTML = "❄️";
   } else {
     temperatureIconElement.innerHTML = "🥶";
+  }*/
+  let descriptionElement = document.querySelector("#description");
+  let description = response.data.condition.description;
+  descriptionElement.innerHTML = description;
+
+  let humidityElement = document.querySelector("#humidity");
+  let humidityValue = response.data.temperature.humidity;
+  humidityElement.innerHTML = `${humidityValue} %`;
+
+  let windElement = document.querySelector("#wind");
+  let windValue = Math.round(response.data.wind.speed);
+  windElement.innerHTML = `${windValue} km/h`;
+
+  let date = new Date(response.data.time * 1000);
+  function formatDate(date) {
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    let day = days[date.getDay()];
+    let hours = date.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+    return `${day} ${hours}:${minutes}`;
   }
+
+  let dateElement = document.querySelector("#date-element");
+  dateElement.innerHTML = `${formatDate(date)}, `;
 }
 
 // stage 3 define the search function that uses api response
